@@ -23,9 +23,8 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo Metadata() {
-		return new ApiInfoBuilder().title("Bolão da Seleção Brasileira na Copa do Mundo 2022 REST API")
-				.description("\"Spring Boot REST API\"").version("1.0.0").license("Apache License Version 2.0")
-				.licenseUrl("https://www.apache.org/licenses/LICENSE-2.0\"").build();
+		return new ApiInfoBuilder().title("REST API - Bolão dos jogos da Seleção Brasileira na Copa do Mundo 2022")
+				.build();
 
 	}
 
