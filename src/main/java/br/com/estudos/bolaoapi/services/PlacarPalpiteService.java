@@ -12,7 +12,7 @@ import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class ResultadoPalpiteService {
+public class PlacarPalpiteService {
 
 	private final SelecaoRepository selecaoRepository;
 

@@ -2,14 +2,13 @@ package br.com.estudos.bolaoapi.model.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -37,8 +36,13 @@ public class Palpite implements Serializable {
 	@JoinColumn(name = "ID_CONFRONTO", nullable = false)
 	private Confronto confronto;
 
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID_RESULTADO_PALPITE", nullable = false)
-	private ResultadoPalpite resultadoPalpite;
+	@Column(nullable = false, updatable = false)
+	private Integer golSelecaoUm;
+
+	@Column(nullable = false, updatable = false)
+	private Integer golSelecaoDois;
+
+	@Column(nullable = false, updatable = true)
+	private Boolean foiPago;
 
 }

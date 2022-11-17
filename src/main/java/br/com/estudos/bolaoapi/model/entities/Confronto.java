@@ -36,10 +36,6 @@ public class Confronto implements Serializable {
 	@JoinColumn(name = "ID_SELECAO_DOIS", nullable = false)
 	private Selecao selecaoDois;
 
-	private LocalDate data;
-
-	@ManyToOne
-	@JoinColumn(name = "ID_RESULTADO_OFICIAL", nullable = true)
-	private ResultadoOficial resultadoOficial;
+	private LocalDate dataJogo;
 
 }

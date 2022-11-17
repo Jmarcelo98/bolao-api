@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,5 +30,9 @@ public class ResultadoOficial implements Serializable {
 	private Integer golSelecaoUm;
 
 	private Integer golSelecaoDois;
+
+	@OneToOne
+	@JoinColumn(name = "ID_CONFRONTO", nullable = true)
+	private Confronto confronto;
 
 }

@@ -1,9 +1,8 @@
 package br.com.estudos.bolaoapi.controllers;
 
-import java.time.LocalDate;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,9 +18,8 @@ public class UsuarioController {
 	private final UsuarioService usuarioService;
 
 	@PostMapping
-	public ResponseEntity<UsuarioDTO> criar(String nomeCompleto, LocalDate dataNascimento) {
-
-		return ResponseEntity.ok(usuarioService.criar(nomeCompleto, dataNascimento));
+	public ResponseEntity<UsuarioDTO> criar(@RequestBody UsuarioDTO usuarioDTO) {
+		return ResponseEntity.ok(usuarioService.criar(usuarioDTO));
 	}
 
 }

@@ -10,7 +10,7 @@ import br.com.estudos.bolaoapi.model.entities.Selecao;
 
 public interface ConfrontoRepository extends JpaRepository<Confronto, Integer> {
 
-	List<Confronto> findAllBySelecaoUmOrSelecaoDoisAndDataLessThanEqual(Selecao selecaoUm, Selecao selecaoDois,
-			LocalDate data);
+	List<Confronto> findAllBySelecaoUmOrSelecaoDoisAndDataJogoLessThanEqual(Selecao selecaoUm, Selecao selecaoDois,
+			LocalDate dataJogo);
 
 }

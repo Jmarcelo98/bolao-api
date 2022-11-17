@@ -31,11 +31,11 @@ public class DBService {
 		selecaoRepository.saveAll(Arrays.asList(selecaoBrasil, selecaoServia, selecaoCamaroes, selecaoSuica));
 
 		var confronto1 = Confronto.builder().id(null).selecaoUm(selecaoBrasil).selecaoDois(selecaoServia)
-				.data(LocalDate.of(2022, 11, 24)).build();
+				.dataJogo(LocalDate.of(2022, 11, 24)).build();
 		var confronto2 = Confronto.builder().id(null).selecaoUm(selecaoBrasil).selecaoDois(selecaoSuica)
-				.data(LocalDate.of(2022, 11, 28)).build();
+				.dataJogo(LocalDate.of(2022, 11, 28)).build();
 		var confronto3 = Confronto.builder().id(null).selecaoUm(selecaoBrasil).selecaoDois(selecaoCamaroes)
-				.data(LocalDate.of(2022, 12, 2)).build();
+				.dataJogo(LocalDate.of(2022, 12, 2)).build();
 
 		confrontoRepository.saveAll(Arrays.asList(confronto1, confronto2, confronto3));
 
