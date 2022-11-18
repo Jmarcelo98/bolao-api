@@ -24,7 +24,6 @@ public class ConfrontoController {
 
 	@PostMapping
 	public ResponseEntity<Void> criar(@RequestBody ConfrontoDTO confrontoDTO) {
-		System.err.println("entrou");
 		confrontoService.criar(confrontoDTO);
 		return ResponseEntity.ok().build();
 	}

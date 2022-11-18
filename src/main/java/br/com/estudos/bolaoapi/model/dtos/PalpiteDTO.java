@@ -15,4 +15,10 @@ public class PalpiteDTO {
 
 	private ConfrontoDTO confronto;
 
+	private Integer golSelecaoUm;
+
+	private Integer golSelecaoDois;
+
+	private Boolean foiPago;
+
 }

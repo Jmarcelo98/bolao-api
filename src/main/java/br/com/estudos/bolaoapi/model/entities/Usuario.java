@@ -32,7 +32,7 @@ public class Usuario implements Serializable {
 	private Integer id;
 
 	@Column(nullable = false)
-	private String nomeCompleto;
+	private String nome;
 
 	@Column(nullable = false)
 	private LocalDate dataNascimento;

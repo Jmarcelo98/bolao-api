@@ -6,9 +6,11 @@ import java.util.Arrays;
 import org.springframework.stereotype.Service;
 
 import br.com.estudos.bolaoapi.model.entities.Confronto;
+import br.com.estudos.bolaoapi.model.entities.Palpite;
 import br.com.estudos.bolaoapi.model.entities.Selecao;
 import br.com.estudos.bolaoapi.model.entities.Usuario;
 import br.com.estudos.bolaoapi.repositories.ConfrontoRepository;
+import br.com.estudos.bolaoapi.repositories.PalpiteRepository;
 import br.com.estudos.bolaoapi.repositories.SelecaoRepository;
 import br.com.estudos.bolaoapi.repositories.UsuarioRepository;
 import lombok.AllArgsConstructor;
@@ -20,6 +22,7 @@ public class DBService {
 	private final SelecaoRepository selecaoRepository;
 	private final UsuarioRepository usuarioRepository;
 	private final ConfrontoRepository confrontoRepository;
+	private final PalpiteRepository palpiteRepository;
 
 	public void instanciaBancoDeDadosH2() {
 
@@ -39,10 +42,15 @@ public class DBService {
 
 		confrontoRepository.saveAll(Arrays.asList(confronto1, confronto2, confronto3));
 
-		var usuario1 = Usuario.builder().id(null).nomeCompleto("João Marcelo de Jesus Macedo")
-				.dataNascimento(LocalDate.of(1998, 11, 16)).build();
+		var usuario1 = Usuario.builder().id(null).nome("João Marcelo").dataNascimento(LocalDate.of(1998, 11, 16))
+				.build();
 
 		usuarioRepository.saveAll(Arrays.asList(usuario1));
+
+		var palpite1 = Palpite.builder().id(null).usuario(usuario1).confronto(confronto1).foiPago(false).golSelecaoUm(1)
+				.golSelecaoDois(0).build();
+
+		palpiteRepository.saveAll(Arrays.asList(palpite1));
 
 	}
 

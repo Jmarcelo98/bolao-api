@@ -9,6 +9,6 @@ import br.com.estudos.bolaoapi.model.entities.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
-	Optional<Usuario> findByNomeCompletoAndDataNascimento(String nomeCompleto, LocalDate dataNascimento);
+	Optional<Usuario> findByNomeAndDataNascimento(String nomeCompleto, LocalDate dataNascimento);
 
 }
